@@ -1,0 +1,192 @@
+a{
+    text-decoration: none;
+  }
+  
+  img{
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  :focus{
+    outline: none;
+  }
+  
+  .wrapper{
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .inner{
+    padding: 20px;
+    max-width: 1000px;
+    top: min(10rem, -5rem);
+    display: flex;
+  }
+  
+  .inner form{
+    width: 70%;
+    margin-right: 30px;
+  }
+  
+  .form-wrapper{
+    width: 100%;
+    height: 40px;
+  
+    margin-bottom:20px;
+  }
+  
+  .form-wrapper input{
+    font-size: 20px;
+    padding: 25px 10px;
+    width: 100%;
+    outline: none;
+  }
+  
+  .form-group{
+    display: flex;
+  }
+  
+  .form-group input{
+    width: 50%;
+    padding: 25px 10px;
+    outline: none;
+  
+  }
+  
+  .form-group input:first-child{
+    margin-right: 10px;
+    width: 57%;
+  }
+  
+  
+  .form-select{
+    padding: 6px, 9px;
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 54px;
+    font-size: 20px;
+    width: 40%;
+  }
+  
+  
+  .form-group1{
+    display: flex;
+  }
+  
+  .form-group1 input{
+    width: 50%;
+    padding: 25px 10px;
+  }
+  
+  .form-group1 input:first-child{
+    margin-right: 10px;
+    width: 180%;
+  }
+  
+  .form-wrapper{
+    position: relative;
+  }
+  
+  .form-control{
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 6px 9px;
+    display: block;
+    width: 96.5%;
+    height: 40px;
+    color: black;
+    font-size: 20px;
+  }
+  
+  .form-group select{
+    cursor: pointer;
+    color: gray;
+  }
+  
+  .form-group select option{
+    font-size: 15px;
+  }
+  
+  .form-group select option[value=""][disabled]{
+    display: none;
+  }
+  
+  .inner button{
+    width: 30%;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 0;
+    font-weight: bold;
+    background: #A0BFE0;
+    transition: .2s;
+  }
+  
+  .btn-container{
+    display: flex;
+    align-items: center;
+  }
+  
+  .btn-edit{
+    margin-left: 100px;
+  }
+  .btn-delete{
+    margin-left: 20px;
+    margin-right: 5%;
+  }
+  
+  .inner button:hover{
+    background: #4A55A2;
+  }
+  
+  .form-control:hover, .form-select:hover{
+    background: #d6dfe9;
+  }
+  
+  .image input{
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 40px;
+    color: gray;
+  }
+  
+  .photo-holder{
+    text-align: center;
+  }
+  
+  .camera-btn{
+    border: none;
+    border-radius: 5px;
+    padding: 13.5px 20px;
+    font-weight: bold;
+    background: #A0BFE0;
+    transition: .2s;
+    color: black;
+    margin-right: 10px;
+  }
+  
+  .camera-btn:hover{
+    background: #4A55A2;
+  
+  }
+  
+  
+  .error{
+    border: 1px solid;
+    margin: 10px 0px;
+    padding: 15px 10px 15px 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+  
+  }
+  
+  
+  .error{
+    color: #D8000C;
+    background-color: #FFBABA;
+    background-image: url('https://i.imgur.com/GnyDvKN.png');
+  }
+  
+  

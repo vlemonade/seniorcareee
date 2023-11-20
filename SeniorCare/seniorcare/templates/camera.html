@@ -1,0 +1,27 @@
+{% block content %}
+{% load static %} 
+
+<head>
+    <title>Live Camera Feed</title>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="{% static 'styles/image_upload.css' %}" type="text/css" media="all">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script defer src="{% static 'js/face.js' %}"></script>
+</head>
+
+<body data-senior-id="{{ seniors.id }}">
+    <h1>Camera</h1>
+    <video id="video" width="640" height="480" autoplay></video>
+
+    <div class="btn_row">
+        <button id="capture-btn">Capture Image</button>
+        <canvas id="canvas" width="640" height="480" style="display: none;"></canvas>
+        <a href="#" class="btn" id="retake-btn" style="display: none;">Retake</a>
+        <a href="#" id="submit-btn"  style="display: none;">Submit</a>
+        <input type="hidden" name="csrfmiddlewaretoken" value='{% csrf_token %}'>
+    </div>
+    
+</body>
+
+{% endblock content %}

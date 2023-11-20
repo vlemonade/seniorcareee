@@ -1,0 +1,103 @@
+{% extends 'main.html' %}
+
+{% block content %}
+  {% load static %}
+  <link rel="stylesheet" type="text/css" media='screen' href="{% static 'styles/claiming.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <div class="claim-detail-container" id="blur">
+    <div class="closebtn-container">
+        <div class="close-btn">
+            <a href="{% url 'claim_page' %}"><i class="fa-solid fa-arrow-left"></i></a>
+        </div>
+    </div>
+
+    {% if seniors.is_claimed %}
+        <div class="claimed-message">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <h2>Allowance is already claimed on <span>{{ seniors.claimed_date|date:"F j, Y" }}</span></h2>
+        </div>
+    {% endif %}
+
+        <div class="display-form">
+            <label>Last Name</label>
+            <input value="{{ seniors.last_name}}" disabled>
+        </div>
+
+        <div class="display-form">
+            <label>First Name</label>
+            <input value="{{ seniors.first_name}}"  disabled>
+        </div>
+
+        <div class="detail-column">
+            <div class="display-form">
+                <label>Middle Name</label>
+                <input value="{{ seniors.middle_name}}"  disabled>
+            </div>
+    
+            <div class="display-form">
+                <label>Suffix</label>
+                <input value="{{ seniors.suffix}}" disabled>
+            </div>
+        </div>
+
+
+        <div class="detail-column1">
+            <div class="display-form">
+                <label>Age</label>
+                <input value="{{ seniors.age}}" disabled>
+            </div>
+    
+            <div class="display-form">
+                <label>Gender</label>
+                <input value="{{ seniors.sex}}" disabled>
+            </div>
+          
+            <div class="display-form">
+                <label>Birthdate</label>
+                <input value="{{ seniors.birth_date}}" disabled>
+            </div>
+        </div>
+
+        <div class="detail-column2">
+            <div class="display-form">
+                <label>ID</label>
+                <input  value="{{ seniors.OSCA_ID}}" disabled>
+            </div>
+
+            {% if seniors.is_claimed %}
+                <a href="{% url 'claimed_success' seniors.id %}"><h1>Next</h1><i class="fa-solid fa-chevron-right"></i></a>
+            {% else %}   
+                <a href="#"  onclick="toggle()"><h1>Next</h1><i class="fa-solid fa-chevron-right"></i></a>
+            {% endif %}
+
+        </div>
+    </div>
+
+    <div class="popup" id="popup">
+        <div class="modal-header">  
+        </div>
+        <div class="modal-body">
+            <i class="fa-solid fa-camera"></i>
+            <h2>Would you like to use facial recognition for authentication?</h2>
+        </div>
+
+        <div class="btn-ftr">
+            <a class="btn-Yes" href="{% url 'camera_page' seniors.id %}">Yes</a>
+            <form method="post" action="{% url 'claimed_succesfully' seniors.id %}">
+                {% csrf_token %}
+                <button type="submit" class="btn-No">No</button>
+             </form>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function toggle() {
+            var blur = document.getElementById('blur');
+            blur.classList.toggle('active')
+            var popup = document.getElementById('popup');
+            popup.classList.toggle('active')
+        }
+    </script>
+
+{% endblock content%}

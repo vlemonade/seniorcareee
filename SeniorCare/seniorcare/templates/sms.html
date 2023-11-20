@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+
+{% block content%}
+{% load static %}
+<form action="{% url 'sms' %}" method="post">
+  {% csrf_token %}
+  <input type="text" name="phone_number" placeholder="Phone number">
+  <input type="text" name="body_message" placeholder="Message">
+  <button type="submit">Send SMS</button>
+</form>
+{%endblock content %}

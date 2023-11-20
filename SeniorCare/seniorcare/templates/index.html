@@ -1,0 +1,35 @@
+
+
+
+<html>
+  {%load static%} 
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" media='screen' href="{% static 'styles/index.css' %}">
+        <title>Log In</title>
+    </head>
+        <body>
+          <form method='POST' action="">
+            {% csrf_token %}
+            <div class="loginpage">
+              <img class="senior" src="{% static 'image/senior_care_logo.png'%}" alt="senior care logo">
+              <img class="avatar" src="{% static 'image/user_avatar.png'%}" alt="user avatar">
+                <div class="loginput">
+                    <input type="text" class="username" name="username" placeholder="Username">
+                    <input type="password" class="password" name="password" placeholder="Password">
+                    
+                    <input type="submit" class="login" value="Log in">
+                </div>
+            </div>
+          </form>
+        </body>
+</html>
+
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    {{ message }}<br>
+    {% endfor %}
+</ul>
+{% endif %}

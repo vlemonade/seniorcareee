@@ -1,0 +1,201 @@
+/*update-view info*/
+body {
+  background-color: #7895cb;
+  font-family: "Inter", Helvetica;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+input,
+select,
+button {
+  color: black;
+  background-color: white;
+  font-size: 20px;
+}
+
+button {
+  position: relative;
+}
+
+img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+:focus {
+  outline: none;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner {
+  padding: 20px;
+  max-width: 1000px;
+  top: min(10rem, -5rem);
+  display: flex;
+}
+
+.inner.photo-holder {
+  width: 30%;
+}
+
+.inner form {
+  width: 70%;
+  margin-right: 30px;
+}
+
+.form-group {
+  display: flex;
+  position: relative;
+}
+
+.form-group input {
+  width: 50%;
+}
+
+.form-group input:first-child {
+  margin-right: 10px;
+  width: 57%;
+}
+
+.form-select {
+  padding: 6px, 9px;
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 30px;
+  font-size: 20px;
+  width: 40%;
+}
+
+.form-btn {
+  display: flex;
+}
+
+.form-group1 {
+  display: flex;
+  position: relative;
+}
+
+.form-group1 input {
+  width: 50%;
+}
+
+.form-group1 input:first-child {
+  margin-right: 10px;
+  width: 80%;
+}
+
+.form-wrapper {
+  position: relative;
+}
+
+.form-control {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 6px 9px;
+  display: block;
+  width: 96.5%;
+  height: 40px;
+  color: black;
+  font-size: 20px;
+}
+
+.form-group select {
+  cursor: pointer;
+  color: gray;
+}
+
+.form-group select option {
+  font-size: 15px;
+}
+
+.form-group select option[value=""][disabled] {
+  display: none;
+}
+
+.inner button {
+  width: 30%;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 0;
+  margin-left: calc(50% - 5rem);
+  font-weight: bold;
+  background: #a0bfe0;
+  transition: 0.2s;
+  text-decoration: none;
+  color: black;
+}
+
+.inner button:hover {
+  background: #4a55a2;
+}
+
+.form-control:hover,
+.form-select:hover {
+  background: #d6dfe9;
+}
+
+@media (max-width: 840px) {
+  .inner .photo-holder {
+    width: 50%;
+  }
+}
+
+@media (max-width: 550px) {
+  .inner .photo-holder {
+    width: 50%;
+    position: absolute;
+    top: min(25%, 15%);
+    right: 25%;
+  }
+
+  .inner form {
+    width: 90%;
+    margin-top: 10%;
+    margin-left: 30px;
+  }
+
+  .form-control {
+    width: 95%;
+  }
+
+  .inner button {
+    width: 40%;
+    margin-left: calc(50% - 3.5rem);
+  }
+}
+
+@media (max-width: 385px) {
+  .inner .photo-holder {
+    top: min(25%, 16%);
+  }
+
+  .inner form {
+    margin-top: 30%;
+    margin-left: 25px;
+  }
+
+  .form-control {
+    width: 93%;
+    height: 30px;
+    font-size: 15px;
+  }
+
+  .form-select {
+    height: 30px;
+    font-size: 15px;
+  }
+
+  .inner button {
+    margin-top: 5px;
+    width: 40%;
+    margin-left: calc(50% - 3.5rem);
+  }
+}
